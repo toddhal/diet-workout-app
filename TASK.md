@@ -91,21 +91,21 @@ Check off tasks as you complete them.
 ## PHASE 6 — Partner View
 *Goal: Partner can plan meals, build shopping list, push to Carrie.*
 
-- [ ] 6.1 — Build Mon–Sun Meal Planner grid
+- [x] 6.1 — Build Mon–Sun Meal Planner grid
   - Each day: 4 meal slots
   - Tap slot → assign a recipe from the recipe list
-- [ ] 6.2 — "Carrie's Picks" panel — displays her preference queue from Phase 4.4
-- [ ] 6.3 — Build Recipe Browser
+- [x] 6.2 — "Carrie's Picks" panel — displays her preference queue from Phase 4.4
+- [x] 6.3 — Build Recipe Browser
   - Card grid layout
   - Filter tabs: All / Breakfast / Lunch / Dinner / Snack
   - Tags visible on each card: `#no-cook` `#quick` `#cholesterol-friendly` etc.
-- [ ] 6.4 — Full Recipe Detail view (ingredients list, step-by-step instructions, prep time)
-- [ ] 6.5 — Shopping List screen
+- [x] 6.4 — Full Recipe Detail view (ingredients list, step-by-step instructions, prep time)
+- [x] 6.5 — Shopping List screen
   - Auto-generates from active week's meal plan
   - Grouped: Produce · Protein · Pantry · Dairy · Other
   - Tap to check off items
   - "Clear checked" button
-- [ ] 6.6 — "Send to Carrie" button — publishes active meal plan to her view
+- [x] 6.6 — "Send to Carrie" button — publishes active meal plan to her view
 
 **✅ Phase 6 Done When:** Partner can plan a full week and push it to Carrie.
 
@@ -120,8 +120,8 @@ Check off tasks as you complete them.
 - [ ] 7.4 — Add avatar photo upload slot (currently shows "C" initials)
 - [ ] 7.5 — Swap `[APP NAME]` token with final app name throughout
 - [ ] 7.6 — Swap motto placeholder with final confirmed motto
-- [ ] 7.7 — Accessibility pass: tap targets minimum 44px, contrast check
-- [ ] 7.8 — Smooth all screen transitions and loading states
+- [x] 7.7 — Accessibility pass: tap targets minimum 44px, contrast check
+- [x] 7.8 — Smooth all screen transitions and loading states
 - [ ] 7.9 — Full review on iPhone screen sizes
 
 **✅ Phase 7 Done When:** App is ready to hand to Carrie.

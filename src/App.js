@@ -23,6 +23,7 @@ function App() {
 
   // Shared state
   const [mealPreferences, setMealPreferences] = useState([]);
+  const [mealPlan, setMealPlan] = useState({});
   const [weightLog, setWeightLog] = useState([]);
   const [stats, setStats] = useState({
     totalWorkouts: 0,
@@ -80,11 +81,23 @@ function App() {
   const renderScreen = () => {
     if (isPartnerView) {
       switch (partnerTab) {
-        case 'planner': return <MealPlannerScreen />;
-        case 'shopping': return <ShoppingListScreen />;
+        case 'planner': return (
+          <MealPlannerScreen
+            mealPlan={mealPlan}
+            onMealPlanChange={setMealPlan}
+            mealPreferences={mealPreferences}
+          />
+        );
+        case 'shopping': return <ShoppingListScreen mealPlan={mealPlan} />;
         case 'recipes': return <RecipesScreen />;
-        case 'push': return <PushToCarrieScreen />;
-        default: return <MealPlannerScreen />;
+        case 'push': return <PushToCarrieScreen mealPlan={mealPlan} />;
+        default: return (
+          <MealPlannerScreen
+            mealPlan={mealPlan}
+            onMealPlanChange={setMealPlan}
+            mealPreferences={mealPreferences}
+          />
+        );
       }
     } else {
       switch (carrieTab) {
