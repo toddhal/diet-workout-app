@@ -25,12 +25,12 @@ Check off tasks as you complete them.
 ## PHASE 2 — Carrie's Home Screen
 *Goal: Carrie opens the app and feels welcomed.*
 
-- [ ] 2.1 — Time-aware greeting: *"Good morning/afternoon/evening, Carrie! 💙"*
-- [ ] 2.2 — Daily motto display (rotating from a list of 14 encouraging messages)
-- [ ] 2.3 — Wegovy tip of the day card (rotating from a list of 7 tips)
-- [ ] 2.4 — Avatar placeholder (circle with "C" initials — photo slot for later)
-- [ ] 2.5 — Three quick-access cards: Today's Workout · What to Eat · My Progress
-- [ ] 2.6 — Cards animate gently on tap (scale/shadow feedback)
+- [x] 2.1 — Time-aware greeting: *"Good morning/afternoon/evening, Carrie! 💙"*
+- [x] 2.2 — Daily motto display (rotating from a list of 14 encouraging messages)
+- [x] 2.3 — Wegovy tip of the day card (rotating from a list of 7 tips)
+- [x] 2.4 — Avatar placeholder (circle with "C" initials — photo slot for later)
+- [x] 2.5 — Three quick-access cards: Today's Workout · What to Eat · My Progress
+- [x] 2.6 — Cards animate gently on tap (scale/shadow feedback)
 
 **✅ Phase 2 Done When:** Home screen feels warm, personal, and complete.
 
@@ -39,16 +39,16 @@ Check off tasks as you complete them.
 ## PHASE 3 — Workout Screen
 *Goal: Carrie can pick a routine and follow it with timer + visuals.*
 
-- [ ] 3.1 — Build routine selector: 🪑 Seated / 🧍 Standing / 🚶 Light Movement
-- [ ] 3.2 — Create exercise data file `/src/data/exercises.js` with all three routines
+- [x] 3.1 — Build routine selector: 🪑 Seated / 🧍 Standing / 🚶 Light Movement
+- [x] 3.2 — Create exercise data file `/src/data/exercises.js` with all three routines
   - Minimum 5 exercises per routine
   - Each exercise: name, description, workSeconds, restSeconds, modification, dumbbellVariation, animationSrc
-- [ ] 3.3 — Build Exercise Card component (animation area, name, description, modification toggle)
-- [ ] 3.4 — Build Countdown Timer component (work interval → rest interval → next exercise)
-- [ ] 3.5 — Add "Having a harder day?" toggle that swaps to modification version
-- [ ] 3.6 — Add dumbbell badge indicator on cards where applicable
-- [ ] 3.7 — Add exercise GIF/animation placeholders (use CSS animations if no GIFs yet)
-- [ ] 3.8 — End of workout: celebration screen with streak update
+- [x] 3.3 — Build Exercise Card component (animation area, name, description, modification toggle)
+- [x] 3.4 — Build Countdown Timer component (work interval → rest interval → next exercise)
+- [x] 3.5 — Add "Having a harder day?" toggle that swaps to modification version
+- [x] 3.6 — Add dumbbell badge indicator on cards where applicable
+- [x] 3.7 — Add exercise GIF/animation placeholders (use CSS animations if no GIFs yet)
+- [x] 3.8 — End of workout: celebration screen with streak update
 
 **✅ Phase 3 Done When:** Carrie can start a routine, follow it with timer, finish it.
 

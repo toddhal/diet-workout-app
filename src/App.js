@@ -46,7 +46,7 @@ function App() {
       }
     } else {
       switch (carrieTab) {
-        case 'home': return <HomeScreen />;
+        case 'home': return <HomeScreen onNavigate={handleTabChange} />;
         case 'workout': return <WorkoutScreen />;
         case 'meals': return <MealsScreen />;
         case 'progress': return <ProgressScreen />;
