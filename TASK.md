@@ -10,13 +10,13 @@ Check off tasks as you complete them.
 ## PHASE 1 — Foundation & Shell
 *Goal: App loads, looks right, navigates correctly. No real data yet.*
 
-- [ ] 1.1 — Initialize React app with mobile viewport meta tags
-- [ ] 1.2 — Create `/src/constants/theme.js` with color palette, font sizes, spacing
-- [ ] 1.3 — Build bottom tab navigation bar (4 tabs for Carrie, 4 for Partner)
-- [ ] 1.4 — Build **View Toggle** — simple switch between Carrie View / Partner View
-- [ ] 1.5 — Create empty screen shells for all 8 screens (just title + placeholder text)
-- [ ] 1.6 — Apply global styles: sky blue + light gray palette, large fonts, card shadows
-- [ ] 1.7 — Confirm app renders correctly at iPhone screen widths (390px, 430px)
+- [x] 1.1 — Initialize React app with mobile viewport meta tags
+- [x] 1.2 — Create `/src/constants/theme.js` with color palette, font sizes, spacing
+- [x] 1.3 — Build bottom tab navigation bar (4 tabs for Carrie, 4 for Partner)
+- [x] 1.4 — Build **View Toggle** — simple switch between Carrie View / Partner View
+- [x] 1.5 — Create empty screen shells for all 8 screens (just title + placeholder text)
+- [x] 1.6 — Apply global styles: sky blue + light gray palette, large fonts, card shadows
+- [x] 1.7 — Confirm app renders correctly at iPhone screen widths (390px, 430px)
 
 **✅ Phase 1 Done When:** App loads, all 8 screens are reachable, looks on-brand.
 
