@@ -46,6 +46,7 @@ export default function ExerciseCard({
       {/* Timer */}
       {isActive && (
         <CountdownTimer
+          exerciseKey={`${exerciseNumber}-${exercise.name}`}
           workSeconds={exercise.workSeconds}
           restSeconds={exercise.restSeconds}
           isActive={isActive}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { colors, fonts, spacing, borderRadius } from '../constants/theme';
 
 export default function CountdownTimer({
+  exerciseKey,
   workSeconds,
   restSeconds,
   isActive,
@@ -57,7 +58,7 @@ export default function CountdownTimer({
     setPhase('idle');
     setTimeLeft(workSeconds);
     clearTimer();
-  }, [workSeconds, restSeconds, clearTimer]);
+  }, [exerciseKey, clearTimer, workSeconds]);
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
