@@ -5,7 +5,7 @@ import ExerciseCard from '../../components/ExerciseCard';
 
 const routineKeys = ['seated', 'standing', 'lightMovement'];
 
-export default function WorkoutScreen() {
+export default function WorkoutScreen({ onWorkoutComplete }) {
   const [selectedRoutine, setSelectedRoutine] = useState(null);
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [completed, setCompleted] = useState(false);
@@ -21,11 +21,12 @@ export default function WorkoutScreen() {
       const routine = exercises[selectedRoutine];
       if (prev + 1 >= routine.exercises.length) {
         setCompleted(true);
+        if (onWorkoutComplete) onWorkoutComplete();
         return prev;
       }
       return prev + 1;
     });
-  }, [selectedRoutine]);
+  }, [selectedRoutine, onWorkoutComplete]);
 
   const handleBackToSelect = () => {
     setSelectedRoutine(null);

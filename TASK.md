@@ -57,14 +57,14 @@ Check off tasks as you complete them.
 ## PHASE 4 — Meals Screen (Carrie's View)
 *Goal: Carrie sees today's meals at a glance and can signal preferences.*
 
-- [ ] 4.1 — Create meal data file `/src/data/meals.js` with one full sample week
+- [x] 4.1 — Create meal data file `/src/data/meals.js` with one full sample week
   - Breakfast & Lunch: no-cook or microwave, 5 min max
   - Snack: grab-and-go
   - Dinner: partner-cooked, chicken/turkey/salmon focused
   - All meals: cholesterol-friendly, Wegovy-appropriate portions
-- [ ] 4.2 — Build Today's Meals screen: 4 cards (Breakfast / Lunch / Snack / Dinner)
-- [ ] 4.3 — Tap a meal card → quick detail view (ingredients + simple prep note)
-- [ ] 4.4 — Build **"What sounds good this week?"** preference selector
+- [x] 4.2 — Build Today's Meals screen: 4 cards (Breakfast / Lunch / Snack / Dinner)
+- [x] 4.3 — Tap a meal card → quick detail view (ingredients + simple prep note)
+- [x] 4.4 — Build **"What sounds good this week?"** preference selector
   - Food mood tags Carrie can tap (e.g. "Something warm", "Light & fresh", "Hearty", "Oats please", "Soup", etc.)
   - Selections saved to state and visible in Partner View
 
@@ -75,14 +75,14 @@ Check off tasks as you complete them.
 ## PHASE 5 — Progress Screen (Carrie's View)
 *Goal: Carrie can log weight and feel motivated by her progress.*
 
-- [ ] 5.1 — Weight entry: simple number input + save button
-- [ ] 5.2 — Line graph: plots weight entries over time, shows goal line at 110 lbs
-- [ ] 5.3 — Current streak counter (days with any logged activity)
-- [ ] 5.4 — Achievements shelf — build `/src/data/achievements.js`
+- [x] 5.1 — Weight entry: simple number input + save button
+- [x] 5.2 — Line graph: plots weight entries over time, shows goal line at 110 lbs
+- [x] 5.3 — Current streak counter (days with any logged activity)
+- [x] 5.4 — Achievements shelf — build `/src/data/achievements.js`
   - Define 10+ badges with unlock conditions
   - Examples: First Workout, 3-Day Streak, 7-Day Streak, First 5 lbs, Halfway There, etc.
-- [ ] 5.5 — Badge unlock animation when a new achievement is earned
-- [ ] 5.6 — Motivational message below graph (*"You're X lbs closer to your goal!"*)
+- [x] 5.5 — Badge unlock animation when a new achievement is earned
+- [x] 5.6 — Motivational message below graph (*"You're X lbs closer to your goal!"*)
 
 **✅ Phase 5 Done When:** Progress feels rewarding, not clinical.
 
