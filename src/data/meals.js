@@ -145,11 +145,11 @@ const meals = {
   },
   friday: {
     breakfast: {
-      name: 'Hard Boiled Egg & Banana',
+      name: 'Hard Boiled Eggs, Banana & Yogurt',
       emoji: '🥚',
       prepTime: '2 min (eggs pre-made)',
-      ingredients: ['1 hard boiled egg (pre-made)', '1 small banana', 'Pinch of salt & pepper'],
-      prep: 'Grab egg and banana. Peel and go.',
+      ingredients: ['2 hard boiled eggs (pre-made)', '1 small banana', '½ cup plain Greek yogurt (non-fat)'],
+      prep: 'Grab eggs, banana, and yogurt. Peel and go. ~24g protein.',
       tags: ['#wegovy-friendly', '#no-cook', '#quick'],
     },
     lunch: {
