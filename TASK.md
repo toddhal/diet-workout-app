@@ -137,9 +137,33 @@ Check off tasks as you complete them.
 
 ---
 
+## PHASE 7.0 — Workout Timer UX Fix
+*Goal: Carrie controls when exercises start, can pause, and can skip.*
+
+- [ ] 7.0.1 — Timer should NOT auto-start. Show a large "Start" button instead.
+- [ ] 7.0.2 — Once started, show Pause/Resume button so Carrie can take a breather mid-exercise.
+- [ ] 7.0.3 — Add a "Rest / Skip →" button so Carrie can skip ahead to rest period or next exercise if needed.
+- [ ] 7.0.4 — Button styling: large tap targets (min 48px), uses existing theme colors, warm/encouraging labels.
+- [ ] 7.0.5 — Files to modify: `src/components/CountdownTimer.js` and `src/components/ExerciseCard.js`
+
+**✅ Phase 7.0 Done When:** Carrie can start, pause, resume, and skip exercises at her own pace.
+
+---
+
+## PHASE 7.1 — App Name & Motto Replacement
+*Goal: Replace all placeholder tokens with final branding.*
+
+- [ ] 7.1.1 — Replace ALL instances of `[APP NAME]` with `Skinny Bitch` across the entire codebase (including `public/index.html` title tag)
+- [ ] 7.1.2 — Replace the motto placeholder `"Every step counts, Carrie. 💙"` with `"She believed she could, so she did... eventually. 💙"` everywhere it appears
+- [ ] 7.1.3 — Update `CLAUDE.md` to reflect the final app name and motto (remove the TBD notes)
+
+**✅ Phase 7.1 Done When:** No `[APP NAME]` or placeholder motto tokens remain anywhere in the project.
+
+---
+
 ## 📌 Tokens to Replace Later
 | Token | Replace With |
 |---|---|
-| `[APP NAME]` | Final app name (TBD) |
-| `"Every step counts, Carrie. 💙"` | Final motto (TBD) |
+| ~~`[APP NAME]`~~ | ~~Skinny Bitch~~ ✅ |
+| ~~`"Every step counts, Carrie. 💙"`~~ | ~~"She believed she could, so she did... eventually. 💙"~~ ✅ |
 | Avatar `"C"` circle | Carrie's photo |
