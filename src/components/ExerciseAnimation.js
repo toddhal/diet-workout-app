@@ -32,7 +32,9 @@ const animationKeyframes = `
   100% { transform: rotate(360deg) translateX(6px) rotate(-360deg); }
 }
 `;
-
+const videoMap = {
+  march: require('../assets/exercises/seated_march.mp4'),
+};
 const animationMap = {
   march: { animation: 'bounce 0.8s ease-in-out infinite', emoji: '🦶' },
   armCircle: { animation: 'circle 2s linear infinite', emoji: '💪' },
@@ -55,11 +57,22 @@ const animationMap = {
 
 export default function ExerciseAnimation({ type, isActive }) {
   const config = animationMap[type] || animationMap.pulse;
+  const videoSrc = videoMap[type];
 
   return (
     <>
       <style>{animationKeyframes}</style>
       <div style={styles.container}>
+        {videoSrc ? (
+          <video
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom', borderRadius: borderRadius.md }}
+          />
+        ) : (
         <div
           style={{
             ...styles.emojiContainer,
@@ -68,6 +81,7 @@ export default function ExerciseAnimation({ type, isActive }) {
         >
           <span style={styles.emoji}>{config.emoji}</span>
         </div>
+      )}
       </div>
     </>
   );
@@ -76,7 +90,7 @@ export default function ExerciseAnimation({ type, isActive }) {
 const styles = {
   container: {
     width: '100%',
-    height: '120px',
+    height: '360px',
     backgroundColor: '#EBF5FB',
     borderRadius: borderRadius.md,
     display: 'flex',
