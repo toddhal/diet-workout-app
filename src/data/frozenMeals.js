@@ -176,10 +176,15 @@ export const defaultFrozenMeals = [
 ];
 
 // Decide which tier a meal belongs to.
+// 4–5 stars → Buy Regularly, 3 stars → Occasional / Retry,
+// 1–2 stars → Skip. Meals with no rating but high sodium land in the
+// High Sodium tier; everything else is Not Yet Rated.
 export function tierForMeal(meal) {
-  if (meal.rating === 5) return 'buy';
-  if (meal.rating === 3) return 'occasional';
-  if (meal.rating != null && meal.rating <= 2) return 'skip';
+  if (meal.rating != null) {
+    if (meal.rating >= 4) return 'buy';
+    if (meal.rating === 3) return 'occasional';
+    if (meal.rating <= 2) return 'skip';
+  }
   if (meal.highSodium) return 'highSodium';
   return 'unrated';
 }
