@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { colors, fonts, spacing, shadows, borderRadius } from '../../constants/theme';
 import { getTodaysMeals, dayLabels, dayOrder } from '../../data/meals';
+import FrozenMealsView from '../../components/FrozenMealsView';
 
 const mealSlots = [
   { key: 'breakfast', label: 'Breakfast', time: 'Morning' },
@@ -20,9 +21,10 @@ const foodMoods = [
   { id: 'simple', label: 'Super simple', icon: '✨' },
 ];
 
-export default function MealsScreen({ preferences, onPreferencesChange }) {
+export default function MealsScreen({ preferences, onPreferencesChange, frozenMeals }) {
   const [expandedMeal, setExpandedMeal] = useState(null);
   const [showPreferences, setShowPreferences] = useState(false);
+  const [activeSubTab, setActiveSubTab] = useState('today'); // 'today' | 'frozen'
 
   const { day, meals } = getTodaysMeals();
   const dayIndex = dayOrder.indexOf(day);
@@ -42,11 +44,45 @@ export default function MealsScreen({ preferences, onPreferencesChange }) {
     }
   };
 
+  const isFrozenTab = activeSubTab === 'frozen';
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>What to Eat Today</h1>
-      <p style={styles.subtitle}>{dayLabel}'s meals 💙</p>
+      <p style={styles.subtitle}>
+        {isFrozenTab ? "Carrie's frozen meal picks 🧊" : `${dayLabel}'s meals 💙`}
+      </p>
 
+      {/* Sub-tab switcher */}
+      <div style={styles.subTabs} role="tablist" aria-label="Meals view">
+        <button
+          role="tab"
+          aria-selected={!isFrozenTab}
+          style={{
+            ...styles.subTab,
+            ...(isFrozenTab ? {} : styles.subTabActive),
+          }}
+          onClick={() => setActiveSubTab('today')}
+        >
+          🍽️ Today
+        </button>
+        <button
+          role="tab"
+          aria-selected={isFrozenTab}
+          style={{
+            ...styles.subTab,
+            ...(isFrozenTab ? styles.subTabActive : {}),
+          }}
+          onClick={() => setActiveSubTab('frozen')}
+        >
+          🧊 Frozen Meals
+        </button>
+      </div>
+
+      {isFrozenTab ? (
+        <FrozenMealsView meals={frozenMeals || []} />
+      ) : (
+        <>
       {/* Meal Cards */}
       <div style={styles.mealList}>
         {mealSlots.map(({ key, label, time }) => {
@@ -128,6 +164,8 @@ export default function MealsScreen({ preferences, onPreferencesChange }) {
           </div>
         </div>
       )}
+        </>
+      )}
     </div>
   );
 }
@@ -149,6 +187,33 @@ const styles = {
     fontSize: fonts.body,
     color: colors.textMedium,
     marginBottom: spacing.lg,
+  },
+  subTabs: {
+    display: 'flex',
+    gap: spacing.sm,
+    marginBottom: spacing.lg,
+    backgroundColor: colors.white,
+    padding: spacing.xs,
+    borderRadius: borderRadius.lg,
+    boxShadow: shadows.card,
+  },
+  subTab: {
+    flex: 1,
+    padding: `${spacing.sm} ${spacing.md}`,
+    borderRadius: borderRadius.md,
+    border: 'none',
+    backgroundColor: 'transparent',
+    color: colors.textMedium,
+    fontSize: fonts.body,
+    fontWeight: 600,
+    cursor: 'pointer',
+    minHeight: '44px',
+    WebkitTapHighlightColor: 'transparent',
+    transition: 'all 0.15s ease',
+  },
+  subTabActive: {
+    backgroundColor: colors.primary,
+    color: colors.white,
   },
   mealList: {
     display: 'flex',

@@ -22,8 +22,29 @@ import {
   applySettings as applyNotificationSettings,
   cancelReminder,
 } from './utils/notifications';
+import { defaultFrozenMeals } from './data/frozenMeals';
 
 const AVATAR_STORAGE_KEY = 'sb_avatar_photo';
+const FROZEN_MEALS_STORAGE_KEY = 'sb_frozen_meals_v1';
+
+function loadFrozenMeals() {
+  try {
+    const raw = localStorage.getItem(FROZEN_MEALS_STORAGE_KEY);
+    if (!raw) return defaultFrozenMeals;
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : defaultFrozenMeals;
+  } catch {
+    return defaultFrozenMeals;
+  }
+}
+
+function persistFrozenMeals(meals) {
+  try {
+    localStorage.setItem(FROZEN_MEALS_STORAGE_KEY, JSON.stringify(meals));
+  } catch {
+    // ignore quota errors
+  }
+}
 
 function loadAvatar() {
   try {
@@ -81,6 +102,17 @@ function App() {
   const updateAvatarPhoto = useCallback((value) => {
     setAvatarPhotoState(value);
     persistAvatar(value);
+  }, []);
+
+  // Frozen meal ratings (persisted, shared between Partner + Carrie views)
+  const [frozenMeals, setFrozenMealsState] = useState(() => loadFrozenMeals());
+
+  const handleAddFrozenMeal = useCallback((meal) => {
+    setFrozenMealsState((prev) => {
+      const next = [meal, ...prev];
+      persistFrozenMeals(next);
+      return next;
+    });
   }, []);
 
   const activeTab = isPartnerView ? partnerTab : carrieTab;
@@ -141,7 +173,12 @@ function App() {
           />
         );
         case 'shopping': return <ShoppingListScreen mealPlan={mealPlan} />;
-        case 'recipes': return <RecipesScreen />;
+        case 'recipes': return (
+          <RecipesScreen
+            frozenMeals={frozenMeals}
+            onAddFrozenMeal={handleAddFrozenMeal}
+          />
+        );
         case 'push': return (
           <PushToCarrieScreen
             mealPlan={mealPlan}
@@ -171,6 +208,7 @@ function App() {
           <MealsScreen
             preferences={mealPreferences}
             onPreferencesChange={setMealPreferences}
+            frozenMeals={frozenMeals}
           />
         );
         case 'progress': return (

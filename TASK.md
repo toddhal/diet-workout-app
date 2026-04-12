@@ -124,19 +124,19 @@ Check off tasks as you complete them.
 
 ---
 
-## PHASE 9 — Frozen Meal Ratings Page
+## PHASE 9 — Frozen Meal Ratings Page ✅
 *Goal: Carrie can browse her rated frozen meals and see what to buy.*
 
-- [ ] 9.1 — Create `/src/data/frozenMeals.js` with the full ratings dataset from CLAUDE.md (all meals with rating, calories, protein, fiber, sodium, notes)
-- [ ] 9.2 — Build a **Frozen Meals screen** accessible from Carrie's Meals tab (new sub-tab or card)
-- [ ] 9.3 — Display meals grouped by rating tier:
+- [x] 9.1 — Create `/src/data/frozenMeals.js` with the full ratings dataset from CLAUDE.md (all meals with rating, calories, protein, fiber, sodium, notes)
+- [x] 9.2 — Build a **Frozen Meals screen** accessible from Carrie's Meals tab (new sub-tab or card)
+- [x] 9.3 — Display meals grouped by rating tier:
   - ✅ **Buy Regularly** (5/5 — green)
   - 🔄 **Occasional / Retry** (3/5 — yellow)
   - ❌ **Skip** (1–2/5 — red/gray)
   - ⚠️ **Not Yet Rated** (neutral)
-- [ ] 9.4 — Each meal card shows: name, star rating, calories, protein, fiber, sodium, Carrie's note
-- [ ] 9.5 — Protein pairing suggestion shown on low-protein meals (pulled from protein pairing guide in CLAUDE.md)
-- [ ] 9.6 — Partner View: add ability to **add a new meal rating** (name, stars 1–5, nutrition fields, notes)
+- [x] 9.4 — Each meal card shows: name, star rating, calories, protein, fiber, sodium, Carrie's note
+- [x] 9.5 — Protein pairing suggestion shown on low-protein meals (pulled from protein pairing guide in CLAUDE.md)
+- [x] 9.6 — Partner View: add ability to **add a new meal rating** (name, stars 1–5, nutrition fields, notes)
 
 **✅ Phase 9 Done When:** Carrie can open the app and see exactly which frozen meals to grab at the store, with her own ratings and notes.
 
