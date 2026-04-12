@@ -9,8 +9,16 @@
     "test": "react-scripts test"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "repository": {
     "type": "git",
@@ -24,5 +32,8 @@
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.1",
     "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^7.0.1"
   }
 }
