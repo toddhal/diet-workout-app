@@ -33,7 +33,5 @@
     "react-router-dom": "^7.13.1",
     "react-scripts": "^5.0.1"
   },
-  "devDependencies": {
-    "eslint-plugin-react-hooks": "^7.0.1"
-  }
+  "devDependencies": {}
 }
