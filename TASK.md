@@ -83,15 +83,15 @@ Check off tasks as you complete them.
 ## PHASE 7 — Polish & Details (In Progress)
 *Goal: App feels finished and delightful.*
 
-- [ ] 7.1 — Add push notification setup (afternoon workout reminder, default 2:00 PM)
-- [ ] 7.2 — Add configurable notification time in Partner settings
+- [x] 7.1 — Add push notification setup (afternoon workout reminder, default 2:00 PM)
+- [x] 7.2 — Add configurable notification time in Partner settings
 - [x] 7.3 — Exercise video support added (MP4 with CSS emoji fallback)
-- [ ] 7.4 — Add avatar photo upload slot (currently shows "C" initials)
+- [x] 7.4 — Add avatar photo upload slot (currently shows "C" initials)
 - [x] 7.5 — Swap `[APP NAME]` token → `Skinny Bitch` throughout
 - [x] 7.6 — Swap motto placeholder → `"She believed she could, so she did... eventually. 💙"`
 - [x] 7.7 — Accessibility pass: tap targets minimum 44px, contrast check
 - [x] 7.8 — Smooth all screen transitions and loading states
-- [ ] 7.9 — Full review on iPhone screen sizes
+- [x] 7.9 — Full review on iPhone screen sizes
 
 ---
 

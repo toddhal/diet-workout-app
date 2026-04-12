@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import BottomNav from './components/BottomNav';
 import ViewToggle from './components/ViewToggle';
 
@@ -14,7 +14,32 @@ import ShoppingListScreen from './screens/partner/ShoppingListScreen';
 import RecipesScreen from './screens/partner/RecipesScreen';
 import PushToCarrieScreen from './screens/partner/PushToCarrieScreen';
 
-import { colors, spacing } from './constants/theme';
+import { colors } from './constants/theme';
+import {
+  loadSettings as loadNotificationSettings,
+  saveSettings as saveNotificationSettings,
+  applySettings as applyNotificationSettings,
+  cancelReminder,
+} from './utils/notifications';
+
+const AVATAR_STORAGE_KEY = 'sb_avatar_photo';
+
+function loadAvatar() {
+  try {
+    return localStorage.getItem(AVATAR_STORAGE_KEY) || null;
+  } catch {
+    return null;
+  }
+}
+
+function persistAvatar(value) {
+  try {
+    if (value) localStorage.setItem(AVATAR_STORAGE_KEY, value);
+    else localStorage.removeItem(AVATAR_STORAGE_KEY);
+  } catch {
+    // ignore quota errors
+  }
+}
 
 function App() {
   const [isPartnerView, setIsPartnerView] = useState(false);
@@ -30,6 +55,32 @@ function App() {
     currentStreak: 0,
     lastActivityDate: null,
   });
+
+  // Notification settings (persisted)
+  const [notificationSettings, setNotificationSettingsState] = useState(() =>
+    loadNotificationSettings()
+  );
+
+  const updateNotificationSettings = useCallback((next) => {
+    setNotificationSettingsState(next);
+    saveNotificationSettings(next);
+    applyNotificationSettings(next);
+  }, []);
+
+  // Apply on mount + cleanup on unmount
+  useEffect(() => {
+    applyNotificationSettings(notificationSettings);
+    return () => cancelReminder();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Avatar photo (persisted)
+  const [avatarPhoto, setAvatarPhotoState] = useState(() => loadAvatar());
+
+  const updateAvatarPhoto = useCallback((value) => {
+    setAvatarPhotoState(value);
+    persistAvatar(value);
+  }, []);
 
   const activeTab = isPartnerView ? partnerTab : carrieTab;
 
@@ -90,7 +141,13 @@ function App() {
         );
         case 'shopping': return <ShoppingListScreen mealPlan={mealPlan} />;
         case 'recipes': return <RecipesScreen />;
-        case 'push': return <PushToCarrieScreen mealPlan={mealPlan} />;
+        case 'push': return (
+          <PushToCarrieScreen
+            mealPlan={mealPlan}
+            notificationSettings={notificationSettings}
+            onNotificationSettingsChange={updateNotificationSettings}
+          />
+        );
         default: return (
           <MealPlannerScreen
             mealPlan={mealPlan}
@@ -101,7 +158,13 @@ function App() {
       }
     } else {
       switch (carrieTab) {
-        case 'home': return <HomeScreen onNavigate={handleTabChange} />;
+        case 'home': return (
+          <HomeScreen
+            onNavigate={handleTabChange}
+            avatarPhoto={avatarPhoto}
+            onAvatarChange={updateAvatarPhoto}
+          />
+        );
         case 'workout': return <WorkoutScreen onWorkoutComplete={handleWorkoutComplete} />;
         case 'meals': return (
           <MealsScreen
@@ -116,7 +179,13 @@ function App() {
             stats={stats}
           />
         );
-        default: return <HomeScreen onNavigate={handleTabChange} />;
+        default: return (
+          <HomeScreen
+            onNavigate={handleTabChange}
+            avatarPhoto={avatarPhoto}
+            onAvatarChange={updateAvatarPhoto}
+          />
+        );
       }
     }
   };
@@ -145,7 +214,7 @@ const styles = {
     position: 'relative',
   },
   screenContainer: {
-    paddingBottom: '80px',
+    paddingBottom: 'calc(80px + env(safe-area-inset-bottom, 0px))',
   },
 };
 
