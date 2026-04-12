@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { colors, fonts, spacing, shadows, borderRadius } from '../../constants/theme';
 import recipes from '../../data/recipes';
+import FrozenMealsView from '../../components/FrozenMealsView';
+import AddFrozenMealRating from '../../components/AddFrozenMealRating';
 
 const categories = [
   { key: 'all', label: 'All' },
@@ -8,12 +10,14 @@ const categories = [
   { key: 'lunch', label: 'Lunch' },
   { key: 'snack', label: 'Snack' },
   { key: 'dinner', label: 'Dinner' },
+  { key: 'frozen', label: '🧊 Frozen Meals' },
 ];
 
-export default function RecipesScreen() {
+export default function RecipesScreen({ frozenMeals, onAddFrozenMeal }) {
   const [filter, setFilter] = useState('all');
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
+  const isFrozen = filter === 'frozen';
   const filtered = filter === 'all'
     ? recipes
     : recipes.filter((r) => r.category === filter);
@@ -80,25 +84,32 @@ export default function RecipesScreen() {
         ))}
       </div>
 
-      {/* Recipe cards */}
-      <div style={styles.cardGrid}>
-        {filtered.map((recipe) => (
-          <button
-            key={recipe.id}
-            style={styles.recipeCard}
-            onClick={() => setSelectedRecipe(recipe)}
-          >
-            <span style={styles.cardEmoji}>{recipe.emoji}</span>
-            <span style={styles.cardName}>{recipe.name}</span>
-            <span style={styles.cardTime}>{recipe.prepTime}</span>
-            <div style={styles.cardTags}>
-              {recipe.tags.slice(0, 2).map((tag) => (
-                <span key={tag} style={styles.cardTag}>{tag}</span>
-              ))}
-            </div>
-          </button>
-        ))}
-      </div>
+      {isFrozen ? (
+        <div style={styles.frozenSection}>
+          <AddFrozenMealRating onAdd={onAddFrozenMeal} />
+          <FrozenMealsView meals={frozenMeals || []} />
+        </div>
+      ) : (
+        /* Recipe cards */
+        <div style={styles.cardGrid}>
+          {filtered.map((recipe) => (
+            <button
+              key={recipe.id}
+              style={styles.recipeCard}
+              onClick={() => setSelectedRecipe(recipe)}
+            >
+              <span style={styles.cardEmoji}>{recipe.emoji}</span>
+              <span style={styles.cardName}>{recipe.name}</span>
+              <span style={styles.cardTime}>{recipe.prepTime}</span>
+              <div style={styles.cardTags}>
+                {recipe.tags.slice(0, 2).map((tag) => (
+                  <span key={tag} style={styles.cardTag}>{tag}</span>
+                ))}
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -142,6 +153,11 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: spacing.md,
+  },
+  frozenSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing.lg,
   },
   recipeCard: {
     display: 'flex',
