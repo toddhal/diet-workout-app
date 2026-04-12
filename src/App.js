@@ -71,8 +71,7 @@ function App() {
   useEffect(() => {
     applyNotificationSettings(notificationSettings);
     return () => cancelReminder();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      }, []);
 
   // Avatar photo (persisted)
   const [avatarPhoto, setAvatarPhotoState] = useState(() => loadAvatar());
