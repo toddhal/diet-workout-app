@@ -287,14 +287,14 @@ const styles = {
   },
   filterChip: {
     fontSize: '13px',
-    padding: '6px 12px',
+    padding: '8px 14px',
     borderRadius: borderRadius.xl,
     border: `1px solid ${colors.primaryLight}`,
     backgroundColor: colors.white,
     color: colors.textMedium,
     cursor: 'pointer',
     whiteSpace: 'nowrap',
-    minHeight: '36px',
+    minHeight: '44px',
     WebkitTapHighlightColor: 'transparent',
   },
   filterActive: {

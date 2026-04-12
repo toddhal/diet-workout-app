@@ -83,26 +83,26 @@ Check off tasks as you complete them.
 ## PHASE 7 — Polish & Details (In Progress)
 *Goal: App feels finished and delightful.*
 
-- [ ] 7.1 — Add push notification setup (afternoon workout reminder, default 2:00 PM)
-- [ ] 7.2 — Add configurable notification time in Partner settings
+- [x] 7.1 — Add push notification setup (afternoon workout reminder, default 2:00 PM)
+- [x] 7.2 — Add configurable notification time in Partner settings
 - [x] 7.3 — Exercise video support added (MP4 with CSS emoji fallback)
-- [ ] 7.4 — Add avatar photo upload slot (currently shows "C" initials)
+- [x] 7.4 — Add avatar photo upload slot (currently shows "C" initials)
 - [x] 7.5 — Swap `[APP NAME]` token → `Skinny Bitch` throughout
 - [x] 7.6 — Swap motto placeholder → `"She believed she could, so she did... eventually. 💙"`
 - [x] 7.7 — Accessibility pass: tap targets minimum 44px, contrast check
 - [x] 7.8 — Smooth all screen transitions and loading states
-- [ ] 7.9 — Full review on iPhone screen sizes
+- [x] 7.9 — Full review on iPhone screen sizes
 
 ---
 
 ## PHASE 7.0 — Workout Timer UX Fix
 *Goal: Carrie controls when exercises start, can pause, and can skip.*
 
-- [ ] 7.0.1 — Timer should NOT auto-start. Show a large "Start" button instead.
-- [ ] 7.0.2 — Once started, show Pause/Resume button so Carrie can take a breather mid-exercise.
-- [ ] 7.0.3 — Add a "Rest / Skip →" button so Carrie can skip ahead to rest period or next exercise.
-- [ ] 7.0.4 — Button styling: large tap targets (min 48px), uses existing theme colors, warm labels.
-- [ ] 7.0.5 — Files to modify: `src/components/CountdownTimer.js` and `src/components/ExerciseCard.js`
+- [x] 7.0.1 — Timer should NOT auto-start. Show a large "Start" button instead.
+- [x] 7.0.2 — Once started, show Pause/Resume button so Carrie can take a breather mid-exercise.
+- [x] 7.0.3 — Add a "Rest / Skip →" button so Carrie can skip ahead to rest period or next exercise.
+- [x] 7.0.4 — Button styling: large tap targets (min 48px), uses existing theme colors, warm labels.
+- [x] 7.0.5 — Files to modify: `src/components/CountdownTimer.js` and `src/components/ExerciseCard.js`
 
 **✅ Phase 7.0 Done When:** Carrie can start, pause, resume, and skip exercises at her own pace.
 

@@ -33,8 +33,12 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     padding: `${spacing.sm} ${spacing.lg}`,
+    paddingTop: `calc(${spacing.sm} + env(safe-area-inset-top, 0px))`,
     backgroundColor: colors.white,
     borderBottom: `1px solid ${colors.background}`,
+    position: 'sticky',
+    top: 0,
+    zIndex: 50,
   },
   button: {
     padding: `${spacing.sm} ${spacing.lg}`,
