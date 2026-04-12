@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import BottomNav from './components/BottomNav';
 import ViewToggle from './components/ViewToggle';
+import SplashScreen from './components/SplashScreen';
 
 // Carrie screens
 import HomeScreen from './screens/carrie/HomeScreen';
@@ -42,6 +43,7 @@ function persistAvatar(value) {
 }
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
   const [isPartnerView, setIsPartnerView] = useState(false);
   const [carrieTab, setCarrieTab] = useState('home');
   const [partnerTab, setPartnerTab] = useState('planner');
@@ -191,6 +193,7 @@ function App() {
 
   return (
     <div style={styles.app}>
+      {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
       <ViewToggle isPartnerView={isPartnerView} onToggle={handleViewToggle} />
       <div style={styles.screenContainer}>
         {renderScreen()}

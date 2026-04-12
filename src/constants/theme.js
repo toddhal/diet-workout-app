@@ -14,6 +14,8 @@ export const colors = {
   accent: '#E8F8F5',
   success: '#58D68D',
   partnerAccent: '#F39C12',
+  brandPink: '#FF1493',
+  brandPinkLight: '#FF6FB5',
 };
 
 export const fonts = {

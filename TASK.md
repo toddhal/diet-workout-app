@@ -108,17 +108,17 @@ Check off tasks as you complete them.
 
 ---
 
-## PHASE 8 — Official Branding (Logo, Loading Screen, Icon)
+## PHASE 8 — Official Branding (Logo, Loading Screen, Icon) ✅
 *Goal: App looks and feels like "Skinny Bitch" — real, polished, hers.*
 
-- [ ] 8.1 — Design a **Skinny Bitch wordmark/logo** — fun, bold, feminine. Sky blue palette. No generic fitness imagery.
-- [ ] 8.2 — Build a **loading/splash screen** that shows the logo on app launch (2–3 second display, then fades to Home)
-- [ ] 8.3 — Create **app icon assets:**
+- [x] 8.1 — Design a **Skinny Bitch wordmark/logo** — fun, bold, feminine. Sky blue palette. No generic fitness imagery.
+- [x] 8.2 — Build a **loading/splash screen** that shows the logo on app launch (2–3 second display, then fades to Home)
+- [x] 8.3 — Create **app icon assets:**
   - `public/favicon.ico` — browser tab icon
   - `public/logo192.png` and `public/logo512.png` — iOS "Add to Home Screen" icon
   - Update `public/manifest.json` with app name `Skinny Bitch` and correct icon paths
-- [ ] 8.4 — Update `public/index.html` `<title>` tag to `Skinny Bitch`
-- [ ] 8.5 — Update `public/manifest.json` fields: `"name"`, `"short_name"`, `"theme_color"` (sky blue), `"background_color"` (white)
+- [x] 8.4 — Update `public/index.html` `<title>` tag to `Skinny Bitch`
+- [x] 8.5 — Update `public/manifest.json` fields: `"name"`, `"short_name"`, `"theme_color"` (sky blue), `"background_color"` (white)
 
 **✅ Phase 8 Done When:** App has a real icon on Carrie's iPhone home screen, a branded splash screen on launch, and no default React branding anywhere.
 
